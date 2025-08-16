@@ -1,25 +1,39 @@
 import React from "react";
 import "./article.css";
 
-export default function AuthorPage({ name, image, goBack, posts, reactions, followers }) {
+export default function AuthorPage({
+  name,
+  image,
+  goBack,
+  posts = 0,
+  followers = 0,
+  reactions = 0,
+  description = ""
+}) {
   return (
-    <>
-      <button className="back-btn" onClick={goBack}>← Back to Article</button>
+    <div>
+      <button className="back-btn" onClick={goBack}>
+        ← Back
+      </button>
       <div className="author-container">
         <div className="author-profile">
-          <img src={image} alt={name} className="author-img" />
+          <img
+            src={image}
+            alt={name}
+            className="author-img"
+            style={{
+              background: "#eee1ff"
+            }}
+          />
           <h2>{name}</h2>
-        </div>
-        <div className="author-details">
-          <p>
-            Humayra Binte Kazal is a curious thinker and writer, exploring the intersection of technology and humanity.
-            Passionate about ethical AI, emotional intelligence, and the future of decision-making.
-          </p>
+          {description && (
+            <p className="author-details">{description}</p>
+          )}
         </div>
         <div className="author-stats-row">
           <div className="author-stat-block">
             <div className="author-stat-value">{posts}</div>
-            <div className="author-stat-label">Articles</div>
+            <div className="author-stat-label">Posts</div>
           </div>
           <div className="author-stat-block">
             <div className="author-stat-value">{followers}</div>
@@ -31,6 +45,6 @@ export default function AuthorPage({ name, image, goBack, posts, reactions, foll
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
