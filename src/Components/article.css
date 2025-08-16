@@ -1,0 +1,110 @@
+.article-container {
+  max-width: 650px;
+  margin: 40px auto;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 32px;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.author-link {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.author-button {
+  background: none;
+  border: none;
+  color: #0077ee;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.reactions {
+  margin: 16px 0;
+}
+
+.reaction-icon {
+  font-size: 1.6em;
+  margin-right: 14px;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+  opacity: 0.5;
+  user-select: none;
+}
+
+.reaction-icon.selected {
+  opacity: 1;
+  transform: scale(1.2);
+  color: #e63946;
+}
+
+.comments {
+  margin-top: 8px;
+}
+
+.comment {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.page-btn {
+  border: 1px solid #0077ee;
+  background: #fff;
+  color: #0077ee;
+  margin: 0 6px;
+  padding: 5px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.page-btn.active, .page-btn:hover {
+  background: #0077ee;
+  color: #fff;
+}
+
+.author-container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #f9f9fa;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.author-profile {
+  margin-bottom: 18px;
+}
+
+.author-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.13);
+}
+
+.back-btn {
+  margin-bottom: 22px;
+  background: none;
+  border: none;
+  color: #0077ee;
+  cursor: pointer;
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+
+.author-details {
+  color: #555;
+  font-size: 1em;
+}
