@@ -25,7 +25,6 @@
   box-shadow: 0 2px 12px rgba(54,1,63,0.08);
 }
 
-/* LINE BELOW COVER IMAGE */
 .cover-divider {
   margin: 13px 0 21px 0;
   border: none;
@@ -33,7 +32,6 @@
   opacity: 0.6;
 }
 
-/* --- AUTHOR HEADER --- */
 .article-header {
   display: flex;
   align-items: flex-start;
@@ -211,19 +209,18 @@
 }
 
 .comments-list {
-  margin-bottom: 12px;
+  margin-bottom: 1p2x;
 }
 
-/* --- EACH COMMENT WHITE BOX, MORE SPACE BETWEEN --- */
+
 .comment-card-box.white-bg {
   background: #fff;
   border-radius: 16px;
   padding: 14px 16px 12px 16px;
-  margin-bottom: 34px; /* Increased space between comments */
+  margin-bottom: 30px;
   box-shadow: 0 1px 6px rgba(54,1,63,0.09);
 }
 
-/* --- COMMENT CARD CONTENT --- */
 .comment-card {
   display: flex;
   align-items: flex-start;
@@ -232,20 +229,20 @@
   border-radius: 12px;
 }
 
-.comment-avatar {
+.comment-avatar-img {
+  border-radius: 50%;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  background: #2c4ccf;
-  flex-shrink: 0;
+  object-fit: cover;
   margin-top: 8px;
+  flex-shrink: 0;
+  background: #eee1ff;
 }
 
 .comment-content {
   flex: 1;
 }
 
-/* --- COMMENT META --- */
 .comment-meta {
   display: flex;
   align-items: center;
@@ -292,7 +289,6 @@
   line-height: 1.5;
 }
 
-/* COMMENT REACTIONS - NO PURPLE BAR, JUST OVAL BUTTONS */
 .comment-reactions-row {
   display: flex;
   gap: 13px;
@@ -308,7 +304,7 @@
   padding: 4px 10px;
   border-radius: 999px;
   border: none;
-  background: #eee1ff; /* Purple oval buttons for comment reactions */
+  background: #eee1ff;
   color: #36013f;
   font-size: 0.93em;
   font-weight: 500;
@@ -338,7 +334,7 @@
   background: transparent;
 }
 
-/* --- COMMENT PAGINATION --- */
+
 .comment-pagination {
   display: flex;
   justify-content: center;
@@ -371,7 +367,6 @@
   outline: none;
 }
 
-/* --- AUTHOR PAGE STYLES (unchanged) --- */
 .author-container {
   max-width: 320px;
   max-height: 800px;
@@ -392,21 +387,14 @@
   height: 120px;
   border-radius: 50%;
   box-shadow: 0 1px 6px rgba(0,0,0,0.13);
+  background: #eee1ff;
+  object-fit: cover;
 }
 
-.back-btn {
-  display: block;
-  margin: 70px auto 10px auto;
-  background: none;
-  border: none;
-  color: #737576;
-  cursor: pointer;
-  font-size: 1.1em;
-  text-decoration: underline;
-}
 .author-details {
   color: #555;
   font-size: 1em;
+  margin: 8px 0 0 0;
 }
 
 .author-stats-row {
@@ -435,4 +423,15 @@
   color: #555;
   margin-top: 3px;
   letter-spacing: 0.3px;
+}
+
+.back-btn {
+  display: block;
+  margin: 70px auto 10px auto;
+  background: none;
+  border: none;
+  color: #737576;
+  cursor: pointer;
+  font-size: 1.1em;
+  text-decoration: underline;
 }

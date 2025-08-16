@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./article.css";
 import AuthorPage from "./AuthorPage";
 
-// Dummy author data
+
 const author = {
   name: "Humayra Binte Kazal",
   image: "/image.jpg",
-  date: "7 January 2025"
+  date: "17 August 2025"
 };
 
 const article = {
@@ -23,11 +23,12 @@ const reactions = [
   { icon: "😢", label: "Sad" }
 ];
 
-// Commenters with custom bios
+
 const commenters = {
   Alice: {
     name: "Alice",
     image: "/alice.jpg",
+    avatarColor: "#a98cf9",
     description: "Alice is a tech writer passionate about AI ethics and cognitive science.",
     posts: 12,
     followers: 430,
@@ -36,6 +37,7 @@ const commenters = {
   Bob: {
     name: "Bob",
     image: "/bob.jpg",
+    avatarColor: "#f98cb5",
     description: "Bob researches decision theory and often shares succinct insights on data-driven logic.",
     posts: 20,
     followers: 210,
@@ -44,6 +46,7 @@ const commenters = {
   Carol: {
     name: "Carol",
     image: "/carol.jpg",
+    avatarColor: "#8cf9b2",
     description: "Carol is an educator who bridges computer science and philosophy in her work.",
     posts: 8,
     followers: 140,
@@ -52,6 +55,7 @@ const commenters = {
   David: {
     name: "David",
     image: "/david.jpg",
+    avatarColor: "#8ccff9",
     description: "David is a developer focused on ethical AI and responsible tech.",
     posts: 15,
     followers: 300,
@@ -60,6 +64,7 @@ const commenters = {
   Eve: {
     name: "Eve",
     image: "/eve.jpg",
+    avatarColor: "#f9c68c",
     description: "Eve writes about technology trends, with a knack for concise analysis.",
     posts: 10,
     followers: 180,
@@ -68,6 +73,7 @@ const commenters = {
   Frank: {
     name: "Frank",
     image: "/frank.jpg",
+    avatarColor: "#cf8cf9",
     description: "Frank explores the intersection of psychology and artificial intelligence.",
     posts: 6,
     followers: 98,
@@ -79,42 +85,36 @@ const initialComments = [
   {
     id: 1,
     name: "Alice",
-    avatarColor: "#a98cf9",
     date: "10 February 2025",
     text: "Balanced view of logic and empathy."
   },
   {
     id: 2,
     name: "Bob",
-    avatarColor: "#f98cb5",
     date: "11 February 2025",
     text: "Strong insight on decision-making."
   },
   {
     id: 3,
     name: "Carol",
-    avatarColor: "#8cf9b2",
     date: "12 February 2025",
     text: "Clear and thoughtful comparison."
   },
   {
     id: 4,
     name: "David",
-    avatarColor: "#8ccff9",
     date: "13 February 2025",
     text: "Highlights ethics alongside efficiency."
   },
   {
     id: 5,
     name: "Eve",
-    avatarColor: "#f9c68c",
     date: "14 February 2025",
     text: "Well-structured and concise piece."
   },
   {
     id: 6,
     name: "Frank",
-    avatarColor: "#cf8cf9",
     date: "15 February 2025",
     text: "Important perspective on AI vs humans."
   }
@@ -185,7 +185,6 @@ export default function ArticlePage() {
         {
           id: comments.length + 1,
           name: author.name,
-          avatarColor: "#2c4ccf",
           date: "16 August 2025",
           text: commentInput
         },
@@ -204,7 +203,7 @@ export default function ArticlePage() {
   const paginatedComments = comments.slice(startIdx, startIdx + COMMENTS_PER_PAGE);
   const paginatedCommentReactions = commentReactions.slice(startIdx, startIdx + COMMENTS_PER_PAGE);
 
-  // Show commenter profile with custom bio
+  // Showing commenter profile with custom bio here
   if (profileUser) {
     const commenterData = commenters[profileUser.name] || {
       name: profileUser.name,
@@ -262,7 +261,6 @@ export default function ArticlePage() {
       <h1>{article.title}</h1>
       <p>{article.content}</p>
       
-      {/* --- POST REACTIONS --- */}
       <div className="post-reactions-row">
         {reactions.map((reaction, idx) => (
           <button
@@ -283,7 +281,6 @@ export default function ArticlePage() {
         ))}
       </div>
 
-      {/* --- COMMENTS SECTION --- */}
       <div className="comments-section">
         <div className="comments-header">
           <span className="comments-count">{comments.length} Comments</span>
@@ -304,10 +301,26 @@ export default function ArticlePage() {
         <div className="comments-list">
           {paginatedComments.map((comment, idxOnPage) => {
             const reactionsObj = paginatedCommentReactions[idxOnPage];
+            const commenterInfo = commenters[comment.name] || {
+              image: "/profile.jpg",
+              avatarColor: "#2c4ccf"
+            };
             return (
               <div className="comment-card-box white-bg" key={comment.id}>
                 <div className="comment-card">
-                  <div className="comment-avatar" style={{ background: comment.avatarColor }} />
+                  <img
+                    src={commenterInfo.image}
+                    alt={comment.name}
+                    className="comment-avatar-img"
+                    style={{
+                      background: commenterInfo.avatarColor,
+                      borderRadius: "50%",
+                      width: "36px",
+                      height: "36px",
+                      objectFit: "cover",
+                      marginTop: "8px"
+                    }}
+                  />
                   <div className="comment-content">
                     <div className="comment-meta">
                       <button
@@ -324,7 +337,6 @@ export default function ArticlePage() {
                       <span className="comment-report">Report</span>
                     </div>
                     <div className="comment-text">{comment.text}</div>
-                    {/* --- COMMENT REACTIONS --- */}
                     <div className="comment-reactions-row">
                       {reactions.map((reaction, rIdx) => (
                         <button
