@@ -4,8 +4,8 @@ import AuthorPage from "./AuthorPage";
 
 // Dummy author data
 const author = {
-  name: "Humayra08",
-  image: "https://randomuser.me/api/portraits/women/68.jpg"
+  name: "Humayra Binte Kazal",
+  image: "/image.jpg" 
 };
 
 // Blog post content
@@ -60,6 +60,9 @@ export default function ArticlePage() {
         name={author.name}
         image={author.image}
         goBack={() => setShowAuthor(false)}
+        posts={12}
+        followers={1250}
+        reactions={890}
       />
     );
   }
