@@ -69,17 +69,18 @@
 }
 
 .page-btn.active, .page-btn:hover {
-  background: #0077ee;
+  background: #eee1ff;
   color: #fff;
 }
 
 .author-container {
-  max-width: 400px;
-  margin: 60px auto;
-  background: #f9f9fa;
-  padding: 32px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  max-width: 320px;
+  max-height: 800px;
+  margin: 70px auto;
+  background: #eee1ff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
 }
 
@@ -95,16 +96,46 @@
 }
 
 .back-btn {
-  margin-bottom: 22px;
+  display: block;
+  margin: 70px auto 10px auto;
   background: none;
   border: none;
-  color: #0077ee;
+  color: #737576;
   cursor: pointer;
   font-size: 1.1em;
   text-decoration: underline;
 }
-
 .author-details {
   color: #555;
   font-size: 1em;
+}
+
+/* Author stats row styles (new) */
+.author-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.author-stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author-stat-value {
+  font-size: 2.1em;
+  font-weight: bold;
+  color: #222;
+  line-height: 1.1;
+}
+
+.author-stat-label {
+  font-size: 1em;
+  color: #555;
+  margin-top: 3px;
+  letter-spacing: 0.3px;
+
 }
